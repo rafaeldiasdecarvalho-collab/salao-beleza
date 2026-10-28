@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Ateliê Bela — Salão de Beleza{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="{% url 'inicio' %}">ATELIÊ <span>BELA</span></a>
+    <nav>
+      <a href="{% url 'inicio' %}#servicos">Serviços</a>
+      <a href="{% url 'inicio' %}#sobre">Sobre</a>
+      <a class="botao botao-pequeno" href="{% url 'agendar' %}">Agendar horário</a>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="rodape">
+    <p>Ateliê Bela · Beleza, cuidado e confiança.</p>
+    <p>Personalize este texto com o endereço e os horários do salão.</p>
+  </footer>
+</body>
+</html>

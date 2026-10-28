@@ -1,0 +1,43 @@
+{% extends "salao/base.html" %}
+{% block title %}Ateliê Bela | Salão de Beleza{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-texto">
+    <p class="sobretitulo">SEU MOMENTO DE CUIDADO</p>
+    <h1>Realce a beleza que já existe em você.</h1>
+    <p class="intro">Um espaço acolhedor para renovar o visual, cuidar dos seus cabelos e reservar um tempo só para você.</p>
+    <div class="acoes">
+      <a class="botao" href="{% url 'agendar' %}">Agendar pelo site</a>
+      <a class="botao botao-claro" href="{{ whatsapp_url }}" target="_blank" rel="noopener">Conversar no WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-imagem" role="img" aria-label="Imagem ilustrativa de cabelo bem cuidado"></div>
+</section>
+
+<section id="servicos" class="secao">
+  <p class="sobretitulo">COMO PODEMOS CUIDAR DE VOCÊ</p>
+  <h2>Nossos serviços</h2>
+  <div class="cartoes">
+    {% for servico in servicos %}
+    <article class="cartao">
+      <span class="numero">0{{ forloop.counter }}</span>
+      <h3>{{ servico.nome }}</h3>
+      <p>{{ servico.descricao }}</p>
+      <strong>{{ servico.preco }}</strong>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="sobre" class="sobre">
+  <div>
+    <p class="sobretitulo">UM TEMPO PARA VOCÊ</p>
+    <h2>Beleza com carinho em cada detalhe.</h2>
+  </div>
+  <p>Queremos que cada visita seja uma experiência especial. Entre em contato para conhecer os serviços, consultar valores e encontrar o melhor horário para você.</p>
+</section>
+<section class="chamada">
+  <h2>Pronta para seu próximo momento de beleza?</h2>
+  <a class="botao" href="{% url 'agendar' %}">Solicitar agendamento</a>
+</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "salao/base.html" %}
+{% block title %}Solicitação enviada | Ateliê Bela{% endblock %}
+{% block content %}
+<section class="formulario-secao sucesso">
+  <p class="sobretitulo">OBRIGADA PELO CONTATO</p>
+  <h1>Sua solicitação foi registrada!</h1>
+  <p>O horário ainda precisa ser confirmado pelo salão. Obrigada por escolher nosso espaço.</p>
+  <a class="botao" href="{% url 'inicio' %}">Voltar ao início</a>
+</section>
+{% endblock %}
