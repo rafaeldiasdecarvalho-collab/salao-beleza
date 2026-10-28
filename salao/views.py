@@ -9,7 +9,7 @@ def inicio(request):
         {"nome": "Coloração", "descricao": "Realce sua beleza com uma nova cor.", "preco": "Sob consulta"},
     ]
     # Troque pelo WhatsApp real do salão: código do país + DDD + número, sem espaços.
-    whatsapp = "5521999999999"
+    whatsapp = "5521991911161"
     mensagem = "Olá! Gostaria de informações sobre os serviços do salão."
     return render(request, "salao/inicio.html", {
         "servicos": servicos,
